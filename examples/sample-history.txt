@@ -1,0 +1,41 @@
+Captured from the real OpenCode 2.3.2 integration fixture (recordPrompts enabled).
+
+Session: ses_df7b529aaffeqezeKh4f26463L
+
+User message: msg_2084ad6900018APnueVz12361l
+"CASE:FIRST Please inspect my project and identify dependencies."
+Executed commands (4):
+  1. pwd
+       2026-11-23T12:04:12.831Z | completed, exit 0
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project
+       assistant: msg_2084ad8f2001YPN0wtLWqa2lrE | shell: sh_2084ad951001PrUQSXUCwrBiZy
+       ended: 2026-11-23T12:04:12.844Z (observed)
+  2. ls -la
+       2026-11-23T12:04:12.832Z | completed, exit 0
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project
+       assistant: msg_2084ad8f2001YPN0wtLWqa2lrE | shell: sh_2084ad952001nZbSZrVtiQM7tz
+       ended: 2026-11-23T12:04:12.852Z (observed)
+  3. find src -type f
+       2026-11-23T12:04:12.833Z | completed, exit 0
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project
+       assistant: msg_2084ad8f2001YPN0wtLWqa2lrE | shell: sh_2084ad955001F954157b5CNE5L
+       ended: 2026-11-23T12:04:12.852Z (observed)
+  4. cat package.json
+       2026-11-23T12:04:12.835Z | completed, exit 0
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project
+       assistant: msg_2084ad8f2001YPN0wtLWqa2lrE | shell: sh_2084ad952002ZVnPNCx42pVIZt
+       ended: 2026-11-23T12:04:12.851Z (observed)
+
+User message: msg_2084ada08001RJsD6qyIiweMnF
+"CASE:SECOND Run a second check, including a failing command."
+Executed commands (2):
+  1. printf second
+       2026-11-23T12:04:12.977Z | completed, exit 0
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project
+       assistant: msg_2084ada1100191ueGRembvmyb6 | shell: sh_2084ada2e001OyO6j0t5XzTYPS
+       ended: 2026-11-23T12:04:12.982Z (observed)
+  2. exit 7
+       2026-11-23T12:04:12.978Z | failed, exit 7
+       cwd: /tmp/opencode/command-history-integration-YCFWFv/project/src
+       assistant: msg_2084ada1100191ueGRembvmyb6 | shell: sh_2084ada2f001ex6nR9LGIKlKPg
+       ended: 2026-11-23T12:04:12.986Z (observed)

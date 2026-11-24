@@ -1,0 +1,29 @@
+{
+  "name": "opencode-session-commands-history",
+  "version": "0.1.0",
+  "description": "Persistent, per-message shell command history for OpenCode V2",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.ts",
+    "./rpc": "./src/rpc.ts"
+  },
+  "files": ["src", "README.md", "examples"],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bun check",
+    "history": "bun src/cli.ts",
+    "test:integration": "bun test/integration.ts"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.3.2"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.3",
+    "@types/node": "^24.0.0",
+    "solid-js": "^1.9.17"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
