@@ -4,23 +4,16 @@ Records OpenCode shell commands by session and user message, with timestamps, wo
 
 Tested with OpenCode 2.3.2 and Bun 1.4.3 on Linux. Requires the V2 plugin API.
 
-## Install
+## Install from npm
 
-Keep the plugin directory somewhere permanent and install its dependencies:
-
-```sh
-cd /path/to/opencode-command-list
-bun install --frozen-lockfile --ignore-scripts
-```
-
-Merge this into your project's `opencode.jsonc`, or `~/.config/opencode/opencode.jsonc` for all projects:
+Add the [npm package](https://www.npmjs.com/package/opencode-session-commands-history) to your project's `opencode.jsonc`, or `~/.config/opencode/opencode.jsonc` for all projects. Merge this with your existing configuration:
 
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
     {
-      "package": "/absolute/path/to/opencode-command-list",
+      "package": "opencode-session-commands-history@0.1.0",
       "options": {
         "recordPrompts": false,
         "notifyOnTurn": true,
@@ -31,7 +24,9 @@ Merge this into your project's `opencode.jsonc`, or `~/.config/opencode/opencode
 }
 ```
 
-Replace the package path with the plugin directory's absolute path. OpenCode reloads configuration automatically; use `/reload` to force it.
+OpenCode installs the package and reloads configuration automatically. Use `/reload` to force a reload.
+
+For a local checkout, run `bun install --frozen-lockfile --ignore-scripts` in the plugin directory and use its absolute path as the `package` value instead.
 
 ## View commands
 
@@ -39,7 +34,7 @@ Open `/command-history` in a TUI session. Search the list, press Enter for comma
 
 Successful turns that ran commands show a notification. Set `autoShow: true` to open history instead. [See sample output](examples/sample-history.txt).
 
-For offline use, run these from the plugin directory:
+For offline use with a source checkout, run these from the plugin directory:
 
 ```sh
 # List recorded session IDs.
